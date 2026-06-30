@@ -9,8 +9,7 @@ The goal of this project was not only to build a working robot, but to gain a de
 Demo
 
 🎥 Video
-
-(Insert YouTube or GitHub video once uploaded.)
+video link:
 
 📷 Screenshots
 
