@@ -10,6 +10,7 @@ Demo
 
 🎥 Video
 video link:
+https://youtu.be/w5zOUElXysA
 
 📷 Screenshots
 
