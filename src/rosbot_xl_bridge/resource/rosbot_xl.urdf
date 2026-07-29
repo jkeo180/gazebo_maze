@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<robot name="rosbot_xl">
+    <webots>
+        <plugin type="rosbot_xl_bridge.rosbot_driver.RosbotDriver" />
+    </webots>
+</robot>
