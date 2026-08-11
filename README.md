@@ -83,3 +83,5 @@ Project Status
 The robot successfully completes the maze autonomously.
 
 Future work will focus on improving simulation realism and expanding navigation capabilities.
+
+![ROS2 CI](https://github.com/jkeo180/gazebo_maze/actions/workflows/ci.yml/badge.svg)
