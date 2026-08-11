@@ -1,0 +1,41 @@
+name: ROS2 CI
+
+# Runs automatically on every push and pull request targeting main.
+# This is what QA/test-automation employers want to see: proof you can
+# wire up automated testing, not just write tests that run manually.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        ros_distribution: [ jazzy ]
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup ROS2 ${{ matrix.ros_distribution }}
+        uses: ros-tooling/setup-ros@v0.7
+        with:
+          required-ros-distributions: ${{ matrix.ros_distribution }}
+
+      - name: Build and test figure_8_pkg
+        uses: ros-tooling/action-ros-ci@v0.3
+        with:
+          package-name: figure_8_pkg
+          target-ros2-distro: ${{ matrix.ros_distribution }}
+          vcs-repo-file-url: ""
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-results
+          path: ros_ws/build/**/test_results/**/*.xml
