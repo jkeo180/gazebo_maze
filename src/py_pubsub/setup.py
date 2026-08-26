@@ -28,6 +28,7 @@ setup(
             'doer = py_pubsub.doer:main',
             'mover = py_pubsub.mover:main',
             'wall_avoider = py_pubsub.wall_avoider:main',
+            'obstacle_avoider = py_pubsub.obstacle_avoider:main',
         ],
     },
 )
